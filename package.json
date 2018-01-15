@@ -1,15 +1,24 @@
 {
-  "name": "flickr-favs",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.0"
+  "name": "flicrk-favs",
+  "version": "1.0.0",
+  "description": "Fav your flicrk images",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javierarques/flickr-favs.git"
   },
+  "keywords": ["react", "flickr", "redux", "sass"],
+  "author":
+    "Javier Arques <javiarchena@gmail.com> (https://github.com/javierarques)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javierarques/flickr-favs/issues"
+  },
+  "homepage": "https://flickr-favs.netlify.com/",
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "watch-css":
+      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
@@ -17,11 +26,21 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.1.0",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "fetch-mock": "^6.0.0-beta.7",
     "node-sass-chokidar": "0.0.3",
-    "npm-run-all": "^4.1.2"
+    "npm-run-all": "^4.1.2",
+    "redux-logger": "^3.0.6"
   }
 }
