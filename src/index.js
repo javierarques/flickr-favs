@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import rootReducer from './reducers';
-import './index.css';
-import App from './App';
+import './styles/index.css';
+import App from './components/App';
 
 let middlewares = [thunk];
 
@@ -21,5 +21,5 @@ render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.querySelector('.Root')
 );

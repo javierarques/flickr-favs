@@ -7,9 +7,13 @@
     "type": "git",
     "url": "git+https://github.com/javierarques/flickr-favs.git"
   },
-  "keywords": ["react", "flickr", "redux", "sass"],
-  "author":
-    "Javier Arques <javiarchena@gmail.com> (https://github.com/javierarques)",
+  "keywords": [
+    "react",
+    "flickr",
+    "redux",
+    "sass"
+  ],
+  "author": "Javier Arques <javiarchena@gmail.com> (https://github.com/javierarques)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/javierarques/flickr-favs/issues"
@@ -17,8 +21,7 @@
   "homepage": "https://flickr-favs.netlify.com/",
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
@@ -27,6 +30,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "fetch-jsonp": "^1.1.3",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
