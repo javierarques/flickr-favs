@@ -3,19 +3,25 @@
 
 .NavItem {
   display: inline-block;
-  padding: $spacer;
+  padding: $spacer-sm $spacer-xs;
 
   text-transform: uppercase;
   text-decoration: none;
   font-size: rem(12px);
   font-weight: 600;
   color: #2c3e50;
+  border-bottom: 3px solid transparent;
+
+  transition: border 200ms;
 
   @include medium {
+    padding: $spacer $spacer-sm;
+    margin-right: $spacer-sm;
     font-size: rem(13px);
   }
 
-  &:first-child {
+  &.is-active,
+  &:hover {
     border-bottom: 3px solid $color-fav;
   }
 }
