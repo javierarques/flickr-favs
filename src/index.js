@@ -5,10 +5,11 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import rootReducer from './reducers';
-import './styles/index.css';
+import flickrFeed from './services/flickrFeed';
 import App from './components/App';
+import './styles/index.css';
 
-let middlewares = [thunk];
+let middlewares = [thunk.withExtraArgument(flickrFeed)];
 
 if (process.env.NODE_ENV !== 'production') {
   const logger = createLogger({ collapsed: true });

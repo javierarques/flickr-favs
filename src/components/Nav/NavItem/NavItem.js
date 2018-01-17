@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { selectCategory } from '../../../actions';
+import { getCategoryImages } from '../../../actions';
 import './NavItem.css';
 
 export const NavItem = ({ currentId, id, name, onClickNavItem, tags }) => {
@@ -13,7 +13,7 @@ export const NavItem = ({ currentId, id, name, onClickNavItem, tags }) => {
       role="button"
       title={name}
       className={className}
-      onClick={() => onClickNavItem(id)}
+      onClick={() => onClickNavItem(id, tags)}
     >
       {name}
     </a>
@@ -29,8 +29,8 @@ NavItem.propTypes = {
 };
 
 const mapDispatchToProps = dispatch => ({
-  onClickNavItem: id => {
-    dispatch(selectCategory(id));
+  onClickNavItem: (id, tags) => {
+    dispatch(getCategoryImages(id, tags));
   }
 });
 

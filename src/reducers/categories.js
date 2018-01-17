@@ -1,39 +1,15 @@
+import { categoriesData } from '../constants';
+
 const categories = (state = [], action) => {
   switch (action.type) {
     case 'GET_CATEGORIES':
     default:
-      return [
-        {
-          name: 'All',
-          id: 'all',
-          tags: 'madrid, barcelone, seville, valencia, bilbao'
-        },
-        {
-          name: 'Madrid',
-          id: 'madrid',
-          tags: 'madrid'
-        },
-        {
-          name: 'Barcelone',
-          id: 'barcelone',
-          tags: 'barcelone'
-        },
-        {
-          name: 'Seville',
-          id: 'seville',
-          tags: 'seville'
-        },
-        {
-          name: 'Valencia',
-          id: 'valencia',
-          tags: 'valencia'
-        },
-        {
-          name: 'bilbao',
-          id: 'bilbao',
-          tags: 'bilbao'
-        }
-      ];
+      const allCategories = {
+        id: 'all',
+        name: 'All',
+        tags: categoriesData.map(cat => cat.tags).join(',')
+      };
+      return [allCategories, ...categoriesData];
   }
 };
 
