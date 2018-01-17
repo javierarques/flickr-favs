@@ -2,13 +2,15 @@
 @import '../../styles/_mixins.scss';
 
 .Footer {
-  padding: $spacer-sm;
-  font-size: rem(12px);
+  padding: $spacer-sm 0;
+  font-size: rem(11px);
+  font-weight: 400;
   text-align: center;
   color: #b5b5b5;
   background: #fff;
 
   @include medium {
+    font-size: rem(12px);
     text-align: right;
   }
 }
