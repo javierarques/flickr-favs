@@ -1,0 +1,17 @@
+@import '../../styles/_config.scss';
+@import '../../styles/_mixins.scss';
+
+.Nav {
+  background-color: #fff;
+}
+
+.Nav-wrapper {
+  max-width: $max-width;
+  margin: auto;
+  overflow: auto;
+  white-space: nowrap;
+
+  @include medium {
+    padding: 0 $spacer;
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../../styles/_config.scss';
+@import '../../../styles/_mixins.scss';
+
+.NavItem {
+  display: inline-block;
+  padding: $spacer;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: rem(12px);
+  font-weight: 600;
+  color: #2c3e50;
+
+  @include medium {
+    font-size: rem(13px);
+  }
+
+  &:first-child {
+    border-bottom: 3px solid $color-fav;
+  }
+}

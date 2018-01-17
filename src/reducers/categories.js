@@ -2,32 +2,38 @@ const categories = (state = [], action) => {
   switch (action.type) {
     case 'GET_CATEGORIES':
     default:
-      return {
-        all: {
-          title: 'All',
+      return [
+        {
+          name: 'All',
+          id: 'all',
           tags: 'madrid, barcelone, seville, valencia, bilbao'
         },
-        madrid: {
-          title: 'Madrid',
+        {
+          name: 'Madrid',
+          id: 'madrid',
           tags: 'madrid'
         },
-        barcelona: {
-          title: 'Bacelone',
+        {
+          name: 'Barcelone',
+          id: 'barcelone',
           tags: 'barcelone'
         },
-        seville: {
-          title: 'Seville',
+        {
+          name: 'Seville',
+          id: 'seville',
           tags: 'seville'
         },
-        valencia: {
-          title: 'Valencia',
+        {
+          name: 'Valencia',
+          id: 'valencia',
           tags: 'valencia'
         },
-        bilbao: {
-          title: 'bilbao',
+        {
+          name: 'bilbao',
+          id: 'bilbao',
           tags: 'bilbao'
         }
-      };
+      ];
   }
 };
 
