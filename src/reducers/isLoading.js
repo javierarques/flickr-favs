@@ -2,8 +2,10 @@ const isLoading = (state, action) => {
   switch (action.type) {
     case 'FETCH_IMAGES_REQUEST':
       return true;
-    default:
+    case 'FETCH_IMAGES_SUCCESS':
       return false;
+    default:
+      return true;
   }
 };
 

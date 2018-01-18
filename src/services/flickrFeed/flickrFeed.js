@@ -23,7 +23,7 @@ const flickrFeed = {
       const result = await flickrFeed.fetch(endpoint);
       return camelizeJSON(result.items);
     } catch (error) {
-      return error;
+      throw new Error(error);
     }
   }
 };

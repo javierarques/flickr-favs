@@ -15,4 +15,7 @@
 
 .App-content {
   flex: 1;
+  @include wrapper;
+  padding-top: $spacer;
+  padding-bottom: $spacer;
 }

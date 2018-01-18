@@ -30,8 +30,13 @@ export const categoriesData = [
     tags: 'granada'
   },
   {
-    name: 'Majorca',
-    id: 'majorca',
-    tags: 'majorca'
+    name: 'Ibiza',
+    id: 'ibiza',
+    tags: 'ibiza'
+  },
+  {
+    name: 'Cordoba',
+    id: 'cordoba',
+    tags: 'cordoba'
   }
 ];
