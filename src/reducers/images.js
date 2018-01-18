@@ -1,4 +1,4 @@
-const images = (state = [], action) => {
+const images = (state = { byId: {}, ids: [] }, action) => {
   switch (action.type) {
     case 'FETCH_IMAGES_SUCCESS':
       return action.images;

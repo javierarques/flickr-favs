@@ -7,8 +7,29 @@ const flickrFeed = {
 };
 
 flickrFeed.getImagesByTags.mockReturnValue(
-  Promise.resolve([{ title: 'Image Title' }])
+  Promise.resolve([
+    {
+      title: 'ESGL\u00c9SIA DE SANT JAUME',
+      link: 'http://www.flickr.com/photos/yeagovc/39716233922/',
+      media: {
+        m: 'http://farm5.staticflickr.com/4606/39716233922_b14b3ca85b_m.jpg'
+      }
+    }
+  ])
 );
+
+const normalizedImages = {
+  byId: {
+    39716233922: {
+      id: '39716233922',
+      title: 'ESGL\u00c9SIA DE SANT JAUME',
+      link: 'http://www.flickr.com/photos/yeagovc/39716233922/',
+      src: 'http://farm5.staticflickr.com/4606/39716233922_b14b3ca85b_m.jpg',
+      categoryId: 'cat'
+    }
+  },
+  ids: ['39716233922']
+};
 
 const middlewares = [thunk.withExtraArgument(flickrFeed)];
 const mockStore = configureMockStore(middlewares);
@@ -18,7 +39,7 @@ describe('async actions', () => {
     const expectedActions = [
       { type: 'SELECT_CATEGORY', categoryId: 'cat' },
       { type: 'FETCH_IMAGES_REQUEST' },
-      { type: 'FETCH_IMAGES_SUCCESS', images: [{ title: 'Image Title' }] }
+      { type: 'FETCH_IMAGES_SUCCESS', images: normalizedImages }
     ];
 
     const store = mockStore({ images: [] });

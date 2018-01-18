@@ -5,8 +5,8 @@ describe('images reducer', () => {
     expect(
       images(undefined, {
         type: 'FETCH_IMAGES_SUCCESS',
-        images: [{ title: 'title' }]
+        images: { byId: {}, ids: [] }
       })
-    ).toEqual([{ title: 'title' }]);
+    ).toEqual({ byId: {}, ids: [] });
   });
 });

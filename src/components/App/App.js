@@ -53,7 +53,7 @@ const mapStateToPros = ({ categories, images, isLoading }) => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    initApp: (id, tags) => dispatch(getCategoryImages(id, tags))
+    initApp: (categoryId, tags) => dispatch(getCategoryImages(categoryId, tags))
   };
 };
 

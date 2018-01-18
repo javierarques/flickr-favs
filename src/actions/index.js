@@ -1,3 +1,5 @@
+import normalize from '../services/normalize';
+
 const selectCategory = categoryId => ({
   type: 'SELECT_CATEGORY',
   categoryId
@@ -27,6 +29,6 @@ export const getCategoryImages = (categoryId, tags) => (
 
   return flickrFeed
     .getImagesByTags(tags)
-    .then(images => dispatch(fetchImagesSuccess(images)))
+    .then(images => dispatch(fetchImagesSuccess(normalize(images, categoryId))))
     .catch(error => dispatch(fetchImagesFailure(error)));
 };
