@@ -19,3 +19,13 @@
   padding-top: $spacer;
   padding-bottom: $spacer;
 }
+
+.App-errorMessage {
+  font-size: rem(18px);
+  text-align: center;
+  margin: 4rem 2rem;
+
+  @include medium {
+    font-size: rem(24px);
+  }
+}

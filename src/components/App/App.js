@@ -10,9 +10,10 @@ import { getCategoryImages } from '../../actions';
 
 class App extends React.Component {
   static propTypes = {
-    initApp: PropTypes.func.isRequired,
+    error: PropTypes.bool.isRequired,
     firstCategory: PropTypes.object.isRequired,
-    isLoading: PropTypes.bool
+    initApp: PropTypes.func.isRequired,
+    isLoading: PropTypes.bool.isRequired
   };
 
   static defaultProps = {
@@ -25,7 +26,12 @@ class App extends React.Component {
   }
 
   render() {
-    const { images, isLoading } = this.props;
+    const { error, images, isLoading } = this.props;
+    const errorMessage = (
+      <p className="App-errorMessage">
+        Oops, we had a problem fetching the images, please reload the page.
+      </p>
+    );
 
     return (
       <div className="App">
@@ -34,6 +40,7 @@ class App extends React.Component {
           <Nav />
         </div>
         <div className="App-content">
+          {error && errorMessage}
           {isLoading && <Loader />}
           {!isLoading && <Gallery images={images} />}
         </div>
@@ -45,10 +52,11 @@ class App extends React.Component {
   }
 }
 
-const mapStateToPros = ({ categories, images, isLoading }) => ({
+const mapStateToPros = ({ categories, images, isLoading, error }) => ({
   images,
   firstCategory: categories[0],
-  isLoading
+  isLoading,
+  error
 });
 
 const mapDispatchToProps = dispatch => {
