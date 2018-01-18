@@ -3,10 +3,10 @@ import thunk from 'redux-thunk';
 import { getCategoryImages } from './index';
 
 const flickrFeed = {
-  searchByTags: jest.fn()
+  getImagesByTags: jest.fn()
 };
 
-flickrFeed.searchByTags.mockReturnValue(
+flickrFeed.getImagesByTags.mockReturnValue(
   Promise.resolve([{ title: 'Image Title' }])
 );
 

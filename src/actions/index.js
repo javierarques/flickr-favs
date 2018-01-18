@@ -26,7 +26,7 @@ export const getCategoryImages = (categoryId, tags) => (
   dispatch(fetchImagesRequest());
 
   return flickrFeed
-    .searchByTags(tags)
+    .getImagesByTags(tags)
     .then(images => dispatch(fetchImagesSuccess(images)))
     .catch(error => dispatch(fetchImagesFailure(error)));
 };

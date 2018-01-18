@@ -10,17 +10,17 @@ const camelizeJSON = json =>
   });
 
 const flickrFeed = {
-  fetch: endpoint =>
+  fetchJson: endpoint =>
     fetchJsonp(endpoint, {
       jsonpCallback: 'jsoncallback',
       timeout: 3000
     }).then(response => response.json()),
 
-  searchByTags: async tags => {
+  getImagesByTags: async tags => {
     const endpoint = `${FLICKR_FEED_API}&tags=${tags}`;
 
     try {
-      const result = await flickrFeed.fetch(endpoint);
+      const result = await flickrFeed.fetchJson(endpoint);
       return camelizeJSON(result.items);
     } catch (error) {
       throw new Error(error);
