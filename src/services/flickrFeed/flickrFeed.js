@@ -2,7 +2,7 @@ import fetchJsonp from 'fetch-jsonp';
 import { camelizeKeys } from 'humps';
 
 const FLICKR_FEED_API =
-  'http://api.flickr.com/services/feeds/photos_public.gne?format=json&tagmode=any';
+  'https://api.flickr.com/services/feeds/photos_public.gne?format=json&tagmode=any';
 
 const camelizeJSON = json =>
   camelizeKeys(json, (key, convert) => {

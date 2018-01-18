@@ -9,7 +9,7 @@ describe('api service', () => {
     const images = await flickrFeed.searchByTags('madrid');
 
     expect(flickrFeed.fetch).toHaveBeenCalledWith(
-      'http://api.flickr.com/services/feeds/photos_public.gne?format=json&tagmode=any&tags=madrid'
+      'https://api.flickr.com/services/feeds/photos_public.gne?format=json&tagmode=any&tags=madrid'
     );
     expect(images).toHaveLength(20);
   });
