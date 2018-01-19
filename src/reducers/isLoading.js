@@ -5,7 +5,7 @@ const isLoading = (state, action) => {
     case 'FETCH_IMAGES_SUCCESS':
       return false;
     default:
-      return true;
+      return false;
   }
 };
 

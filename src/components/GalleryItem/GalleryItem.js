@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FavButton from '../FavButton';
 import './GalleryItem.css';
 
 const GalleryItem = ({ image }) => {
@@ -15,7 +16,12 @@ const GalleryItem = ({ image }) => {
             className="GalleryItem-image"
           />
         </div>
-        {title && <h3 className="GalleryItem-title">{title}</h3>}
+        <footer className="GalleryItem-footer">
+          {title && <h3 className="GalleryItem-title">{title}</h3>}
+          <div className="GalleryItem-button">
+            <FavButton image={image} />
+          </div>
+        </footer>
       </a>
     </article>
   );

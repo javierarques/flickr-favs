@@ -1,6 +1,6 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { getCategoryImages } from './index';
+import { getCategoryImages } from './images';
 
 const flickrFeed = {
   getImagesByTags: jest.fn()
@@ -34,7 +34,7 @@ const normalizedImages = {
 const middlewares = [thunk.withExtraArgument(flickrFeed)];
 const mockStore = configureMockStore(middlewares);
 
-describe('async actions', () => {
+describe('fetch images actions', () => {
   it('creates FETCH_IMAGES_SUCCESS when fetching images has been done', async () => {
     const expectedActions = [
       { type: 'SELECT_CATEGORY', categoryId: 'cat' },

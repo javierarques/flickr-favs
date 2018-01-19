@@ -59,10 +59,8 @@ const mapStateToPros = ({ categories, images, isLoading, error }) => ({
   error
 });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    initApp: (categoryId, tags) => dispatch(getCategoryImages(categoryId, tags))
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  initApp: (categoryId, tags) => dispatch(getCategoryImages(categoryId, tags))
+});
 
 export default connect(mapStateToPros, mapDispatchToProps)(App);
