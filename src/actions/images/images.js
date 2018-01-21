@@ -1,4 +1,4 @@
-import normalize from '../services/normalize';
+import normalize from '../../services/normalize';
 
 const selectCategory = categoryId => ({
   type: 'SELECT_CATEGORY',

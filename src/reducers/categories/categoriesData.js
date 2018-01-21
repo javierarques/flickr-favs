@@ -1,4 +1,4 @@
-export const categoriesData = [
+const categoriesData = [
   {
     name: 'Madrid',
     id: 'madrid',
@@ -40,3 +40,5 @@ export const categoriesData = [
     tags: 'cordoba'
   }
 ];
+
+export default categoriesData;

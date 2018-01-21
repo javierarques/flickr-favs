@@ -1,4 +1,4 @@
-import { categoriesData } from '../constants';
+import categoriesData from './categoriesData';
 
 const categories = (state = [], action) => {
   switch (action.type) {
