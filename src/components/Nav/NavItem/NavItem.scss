@@ -20,8 +20,11 @@
     font-size: rem(13px);
   }
 
-  &.is-active,
   &:hover {
+    color: darken($color-brand, 20%);
+  }
+
+  &.is-active {
     border-bottom: 3px solid $color-fav;
   }
 }
