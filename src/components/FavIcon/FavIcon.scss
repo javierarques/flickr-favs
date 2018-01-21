@@ -1,0 +1,15 @@
+@import '../../styles/_config.scss';
+@import '../../styles/_mixins.scss';
+
+.FavIcon-circle {
+  transition: all 200ms ease-in-out;
+
+  .FavButton:hover:not(.FavButton:active) & {
+    fill: $color-brand;
+  }
+
+  .is-active &,
+  .is-active:active & {
+    fill: $color-fav;
+  }
+}

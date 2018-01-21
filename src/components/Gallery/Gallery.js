@@ -10,22 +10,19 @@ const Gallery = ({ images }) => {
     </p>
   );
 
-  const galleryItems = images.ids.map(id => {
-    const image = images.byId[id];
-    return (
-      <div className="Gallery-item" key={id}>
-        <GalleryItem image={image} />
-      </div>
-    );
-  });
+  const galleryItems = images.map(image => (
+    <div className="Gallery-item" key={image.id}>
+      <GalleryItem image={image} />
+    </div>
+  ));
 
-  if (images.ids.length === 0) return errorMessage;
+  if (galleryItems.length === 0) return errorMessage;
 
   return <div className="Gallery">{galleryItems}</div>;
 };
 
 Gallery.propTypes = {
-  images: PropTypes.object.isRequired
+  images: PropTypes.array.isRequired
 };
 
 export default Gallery;

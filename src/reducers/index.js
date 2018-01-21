@@ -4,13 +4,15 @@ import current from './current';
 import error from './error';
 import images from './images';
 import isLoading from './isLoading';
+import showOnlyFavourites from './showOnlyFavourites';
 
 const rootReducer = combineReducers({
   categories,
   current,
   error,
   images,
-  isLoading
+  isLoading,
+  showOnlyFavourites
 });
 
 export default rootReducer;

@@ -12,6 +12,8 @@
 
 .Header-wrapper {
   @include wrapper;
+  display: flex;
+  align-items: center;
 }
 
 .Header-logo {
@@ -26,4 +28,8 @@
   @include medium {
     height: 25px;
   }
+}
+
+.Header-actions {
+  margin-left: auto;
 }

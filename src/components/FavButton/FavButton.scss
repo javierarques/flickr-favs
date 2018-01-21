@@ -18,18 +18,6 @@ $fav-icon-size: 32px;
   cursor: pointer;
 }
 
-.FavButton-iconCircle {
-  transition: all 200ms ease-in-out;
-
-  .FavButton:hover & {
-    fill: $color-brand;
-  }
-
-  .FavButton.is-active & {
-    fill: $color-fav;
-  }
-}
-
 .FavButton::after {
   content: '';
 

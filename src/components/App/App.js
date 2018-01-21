@@ -7,6 +7,7 @@ import Nav from '../Nav';
 import Loader from '../Loader';
 import Gallery from '../Gallery';
 import { getCategoryImages } from '../../actions';
+import { getImages } from '../../selectors';
 
 class App extends React.Component {
   static propTypes = {
@@ -42,7 +43,7 @@ class App extends React.Component {
         <div className="App-content">
           {error && errorMessage}
           {isLoading && <Loader />}
-          {!isLoading && <Gallery images={images} />}
+          {!error && !isLoading && <Gallery images={images} />}
         </div>
         <div className="App-footer">
           <Footer />
@@ -52,11 +53,11 @@ class App extends React.Component {
   }
 }
 
-const mapStateToPros = ({ categories, images, isLoading, error }) => ({
-  images,
-  firstCategory: categories[0],
-  isLoading,
-  error
+const mapStateToPros = state => ({
+  images: getImages(state),
+  firstCategory: state.categories[0],
+  isLoading: state.isLoading,
+  error: state.error
 });
 
 const mapDispatchToProps = dispatch => ({

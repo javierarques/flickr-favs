@@ -1,19 +1,20 @@
-import { addFavourite, removeFavourite } from './favourites';
+import { toggleFavourite, toggleShowFavourites } from './favourites';
 
 describe('favourites', () => {
-  it('should create an action to add a favourite', () => {
+  it('should create an action to toggle a favourite', () => {
     const expectedAction = {
       type: 'TOGGLE_FAVOURITE',
       id: 'id'
     };
-    expect(addFavourite('id')).toEqual(expectedAction);
+
+    expect(toggleFavourite('id')).toEqual(expectedAction);
   });
 
-  it('should create an action to remove a favourite', () => {
+  it('should create an action to filter by favourited images', () => {
     const expectedAction = {
-      type: 'REMOVE_FAVOURITE',
-      id: 'id'
+      type: 'TOGGLE_SHOW_FAVOURITES'
     };
-    expect(removeFavourite('id')).toEqual(expectedAction);
+
+    expect(toggleShowFavourites()).toEqual(expectedAction);
   });
 });

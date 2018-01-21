@@ -1,0 +1,89 @@
+@import '../../styles/_config.scss';
+@import '../../styles/_mixins.scss';
+
+$fav-toggle-transition: all 200ms;
+
+.FavToggle {
+  display: flex;
+  padding: 0 14px;
+  padding-left: 4px;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #fff;
+  border-radius: 32px;
+  outline: none;
+  background-color: transparent;
+
+  color: #fff;
+  font-size: rem(11px);
+  font-weight: 600;
+  font-family: $font-family;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  @include medium() {
+    padding: 4px 16px;
+    padding-left: 8px;
+    font-size: rem(13px);
+  }
+
+  &:hover {
+    color: $color-brand;
+    background: #fff;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  transition: $fav-toggle-transition;
+}
+
+.FavToggle.is-active {
+  background-color: #fff;
+  color: $color-fav;
+
+  .FavIcon-circle,
+  &:hover .FavIcon-heart {
+    fill: #fff;
+  }
+  .FavIcon-heart,
+  &:hover .FavIcon-heart {
+    fill: $color-fav;
+  }
+}
+
+.FavToggle-icon {
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.FavToggle-text {
+  display: inline-block;
+}
+
+.FavToggle-ShowText {
+  display: none;
+
+  @include medium {
+    display: inline-block;
+  }
+}
+
+.FavToggle .FavIcon-circle {
+  fill: $color-brand;
+}
+
+.FavToggle .FavIcon-circle {
+  transition: $fav-toggle-transition;
+}
+
+.FavToggle:hover {
+  .FavIcon-circle {
+    fill: #fff;
+  }
+  .FavIcon-heart {
+    fill: $color-brand;
+  }
+}

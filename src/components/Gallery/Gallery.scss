@@ -15,6 +15,7 @@ $gallery-gap: 1rem;
   width: 100%;
   margin: 0 0 $gallery-gap;
   break-inside: avoid-column;
+  outline: none;
 }
 
 @media only screen and (min-width: 460px) {
