@@ -59,4 +59,60 @@ describe('images reducer', () => {
       ids: ['123']
     });
   });
+
+  test('it should merge the images with the favourites', () => {
+    const state = {
+      byId: {
+        123: {
+          title: 'A title',
+          categoryId: 'category'
+        }
+      },
+      ids: ['123']
+    };
+    deepFreeze(state);
+
+    const favourites = {
+      byId: {
+        123: {
+          title: 'A title',
+          categoryId: 'category',
+          isFavourite: true
+        },
+        456: {
+          title: 'A title',
+          categoryId: 'category',
+          isFavourite: true
+        },
+        789: {
+          title: 'A title',
+          categoryId: 'otherCategory',
+          isFavourite: true
+        }
+      },
+      ids: ['123', '456', '789']
+    };
+
+    expect(
+      imagesReducer(state, {
+        type: 'SHOW_FAVOURITES',
+        categoryId: 'category',
+        favourites
+      })
+    ).toEqual({
+      byId: {
+        123: {
+          title: 'A title',
+          isFavourite: true,
+          categoryId: 'category'
+        },
+        456: {
+          title: 'A title',
+          categoryId: 'category',
+          isFavourite: true
+        }
+      },
+      ids: ['123', '456']
+    });
+  });
 });

@@ -19,6 +19,12 @@ const fetchImagesFailure = error => ({
   error
 });
 
+const showFavourites = (categoryId, favourites) => ({
+  type: 'SHOW_FAVOURITES',
+  categoryId,
+  favourites
+});
+
 export const getCategoryImages = (categoryId, tags) => (
   dispatch,
   getState,
@@ -29,6 +35,12 @@ export const getCategoryImages = (categoryId, tags) => (
 
   return flickrFeed
     .getImagesByTags(tags)
-    .then(images => dispatch(fetchImagesSuccess(normalize(images, categoryId))))
-    .catch(error => dispatch(fetchImagesFailure(error)));
+    .then(images => {
+      dispatch(fetchImagesSuccess(normalize(images, categoryId)));
+      dispatch(showFavourites(categoryId, getState().favourites));
+    })
+    .catch(error => {
+      dispatch(showFavourites(categoryId, getState().favourites));
+      dispatch(fetchImagesFailure(error));
+    });
 };

@@ -1,3 +1,5 @@
+import union from 'lodash/union';
+
 const images = (state = { byId: {}, ids: [] }, action) => {
   const { byId, ids } = state;
 
@@ -16,6 +18,22 @@ const images = (state = { byId: {}, ids: [] }, action) => {
             }
           }
         }
+      };
+    case 'SHOW_FAVOURITES':
+      let favouriteImages = {};
+      let favouriteIds = [];
+      const { favourites, categoryId } = action;
+
+      favourites.ids.forEach(id => {
+        if (favourites.byId[id].categoryId === categoryId) {
+          favouriteImages[id] = favourites.byId[id];
+          favouriteIds.push(id);
+        }
+      });
+
+      return {
+        ids: union(state.ids, favouriteIds),
+        byId: { ...state.byId, ...favouriteImages }
       };
 
     default:

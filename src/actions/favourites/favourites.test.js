@@ -4,10 +4,11 @@ describe('favourites', () => {
   it('should create an action to toggle a favourite', () => {
     const expectedAction = {
       type: 'TOGGLE_FAVOURITE',
-      id: 'id'
+      id: 'id',
+      image: { id: 'id1' }
     };
 
-    expect(toggleFavourite('id')).toEqual(expectedAction);
+    expect(toggleFavourite('id', { id: 'id1' })).toEqual(expectedAction);
   });
 
   it('should create an action to filter by favourited images', () => {

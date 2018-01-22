@@ -1,6 +1,7 @@
-export const toggleFavourite = id => ({
+export const toggleFavourite = (id, image) => ({
   type: 'TOGGLE_FAVOURITE',
-  id
+  id,
+  image
 });
 
 export const toggleShowFavourites = () => ({

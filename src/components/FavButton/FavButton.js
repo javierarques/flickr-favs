@@ -4,12 +4,14 @@ import FavIcon from '../FavIcon';
 import { toggleFavourite } from '../../actions';
 import './FavButton.css';
 
-const FavButton = ({ toggleFavourite, image: { id, isFavourite } }) => {
+const FavButton = ({ toggleFavourite, image }) => {
+  const { id, isFavourite } = image;
+
   const handleClick = e => {
     e.preventDefault();
     e.stopPropagation();
 
-    toggleFavourite(id);
+    toggleFavourite(id, image);
   };
 
   const className = isFavourite ? 'FavButton is-active' : 'FavButton';
@@ -21,7 +23,8 @@ const FavButton = ({ toggleFavourite, image: { id, isFavourite } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  toggleFavourite: id => dispatch(toggleFavourite(id))
+  toggleFavourite: (id, image) =>
+    dispatch(toggleFavourite(id, { ...image, isFavourite: true }))
 });
 
 export default connect(undefined, mapDispatchToProps)(FavButton);

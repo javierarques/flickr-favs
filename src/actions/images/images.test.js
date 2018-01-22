@@ -39,10 +39,11 @@ describe('fetch images actions', () => {
     const expectedActions = [
       { type: 'SELECT_CATEGORY', categoryId: 'cat' },
       { type: 'FETCH_IMAGES_REQUEST' },
-      { type: 'FETCH_IMAGES_SUCCESS', images: normalizedImages }
+      { type: 'FETCH_IMAGES_SUCCESS', images: normalizedImages },
+      { type: 'SHOW_FAVOURITES', categoryId: 'cat', favourites: {} }
     ];
 
-    const store = mockStore({ images: [] });
+    const store = mockStore({ images: [], favourites: {} });
     const response = await store.dispatch(getCategoryImages('cat', 'tags'));
 
     expect(store.getActions()).toEqual(expectedActions);
